@@ -41,8 +41,8 @@
             "sources": [
                  {
                     "type": "archive",
-                    "url": "https://github.com/g-truc/glm/releases/download/1.0.1/glm-1.0.1-light.zip",
-                    "sha256": "9a995de4da09723bd33ef194e6b79818950e5a8f2e154792f02e4615277cfb8d"
+                    "url": "https://github.com/g-truc/glm/archive/refs/tags/1.0.0.zip",
+                    "sha256": "66b3604366466c1674736cfec7c334d2d0b79b6c23096d1377637f4b71579c59"
                 }
 
             ],
