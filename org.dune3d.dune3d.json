@@ -1,7 +1,7 @@
 {
     "app-id": "org.dune3d.dune3d",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "45",
+    "runtime-version": "46",
     "sdk": "org.gnome.Sdk",
     "command": "dune3d",
     "finish-args": [
@@ -41,8 +41,8 @@
             "sources": [
                  {
                     "type": "archive",
-                    "url": "https://github.com/g-truc/glm/releases/download/0.9.9.5/glm-0.9.9.5.zip",
-                    "sha256": "4fe34860ce69156f63eea6c3d84c91cadfc330353cf275ff394aef4e163cafee"
+                    "url": "https://github.com/g-truc/glm/releases/download/1.0.1/glm-1.0.1-light.zip",
+                    "sha256": "9a995de4da09723bd33ef194e6b79818950e5a8f2e154792f02e4615277cfb8d"
                 }
 
             ],
