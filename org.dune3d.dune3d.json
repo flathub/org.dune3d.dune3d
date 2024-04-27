@@ -121,8 +121,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/dune3d/dune3d/archive/refs/tags/v1.0.0.tar.gz",
-                    "sha256": "64f5c65fbd7b176e9e9feb923b33dbfea36a47e4c239604c27e2bf4049037c16"
+                    "url": "https://github.com/dune3d/dune3d/archive/refs/tags/v1.0.90.tar.gz",
+                    "sha256": "28425404348950973cceac247c39100287f98f1cd09eb9f69cd7a1f83342ed30"
                 }
             ]
         }
