@@ -1,7 +1,7 @@
 {
     "app-id": "org.dune3d.dune3d",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "46",
+    "runtime-version": "47",
     "sdk": "org.gnome.Sdk",
     "command": "dune3d",
     "finish-args": [
@@ -41,8 +41,8 @@
             "sources": [
                  {
                     "type": "archive",
-                    "url": "https://github.com/g-truc/glm/archive/refs/tags/1.0.0.zip",
-                    "sha256": "66b3604366466c1674736cfec7c334d2d0b79b6c23096d1377637f4b71579c59"
+                    "url": "https://github.com/g-truc/glm/archive/refs/tags/1.0.1.zip",
+                    "sha256": "09c5716296787e1f7fcb87b1cbdbf26814ec1288ed6259ccd30d5d9795809fa5"
                 }
 
             ],
@@ -57,9 +57,13 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=refs/tags/V7_7_1;sf=tgz",
+                    "url": "https://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=refs/tags/V7_8_1;sf=tgz",
                     "dest-filename": "opencascade.tgz",
-                    "sha256": "f413d30a8a06d6164e94860a652cbc96ea58fe262df36ce4eaa92a9e3561fd12"
+                    "sha256": "33f2bdb67e3f6ae469f3fa816cfba34529a23a9cb736bf98a32b203d8531c523"
+                },
+                {
+                    "type":"patch",
+                    "paths":["ft_outline.patch"]
                 }
             ],
             "buildsystem": "cmake-ninja",
@@ -121,8 +125,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/dune3d/dune3d/archive/refs/tags/v1.1.0.tar.gz",
-                    "sha256": "5d3689bc1c73e412fed6b8c67c01422cff7f484640320ea948e1916de828fbf6"
+                    "url": "https://github.com/dune3d/dune3d/archive/refs/tags/v1.1.90.tar.gz",
+                    "sha256": "669185089542ac2cb22f1f1cf1d028d9cd9aff15847ae6f038df7126eeb963f1"
                 }
             ]
         }
