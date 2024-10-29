@@ -69,6 +69,8 @@
             "buildsystem": "cmake-ninja",
             "cleanup": [ "/share" ],
             "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DBUILD_RELEASE_DISABLE_EXCEPTIONS=OFF",
                 "-DBUILD_LIBRARY_TYPE=Shared",
                 "-DBUILD_Inspector=OFF",
                 "-DBUILD_DOC_Overview=OFF",
