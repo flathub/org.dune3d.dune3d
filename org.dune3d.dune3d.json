@@ -1,7 +1,7 @@
 {
     "app-id": "org.dune3d.dune3d",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "47",
+    "runtime-version": "49",
     "sdk": "org.gnome.Sdk",
     "command": "dune3d",
     "finish-args": [
@@ -41,12 +41,13 @@
             "sources": [
                  {
                     "type": "archive",
-                    "url": "https://github.com/g-truc/glm/archive/refs/tags/1.0.1.zip",
-                    "sha256": "09c5716296787e1f7fcb87b1cbdbf26814ec1288ed6259ccd30d5d9795809fa5"
+                    "url": "https://github.com/g-truc/glm/archive/refs/tags/1.0.2.zip",
+                    "sha256": "be64032585415ca7dbea0d614915bb8eec012adf7b4d4fea7ff6b5bd3e0b906a"
                 }
 
             ],
             "buildsystem": "cmake-ninja",
+            "cleanup": [ "/share" ],
             "config-opts": [
                 "-DGLM_TEST_ENABLE=OFF",
                 "-DCMAKE_INSTALL_LIBDIR=lib"
@@ -57,17 +58,13 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=refs/tags/V7_8_1;sf=tgz",
+                    "url": "https://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=refs/tags/V7_9_2;sf=tgz",
                     "dest-filename": "opencascade.tgz",
-                    "sha256": "33f2bdb67e3f6ae469f3fa816cfba34529a23a9cb736bf98a32b203d8531c523"
-                },
-                {
-                    "type":"patch",
-                    "paths":["ft_outline.patch"]
+                    "sha256": "b012222ddeb7c847325c1346eab8ec8c088834636e6063c2a3cb30641240d73c"
                 }
             ],
             "buildsystem": "cmake-ninja",
-            "cleanup": [ "/share" ],
+            "cleanup": [ "/share", "/bin" ],
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE=Release",
                 "-DBUILD_RELEASE_DISABLE_EXCEPTIONS=OFF",
@@ -95,8 +92,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.gz",
-                    "sha256": "8586084f71f9bde545ee7fa6d00288b264a2b7ac3607b974e54d13e7162c1c72",
+                    "url": "https://gitlab.com/libeigen/eigen/-/archive/3.4.1/eigen-3.4.1.tar.gz",
+                    "sha256": "b93c667d1b69265cdb4d9f30ec21f8facbbe8b307cf34c0b9942834c6d4fdbe2",
                     "x-checker-data": {
                         "type": "html",
                         "url": "https://eigen.tuxfamily.org/index.php?title=Main_Page",
@@ -116,8 +113,8 @@
             "sources": [
             {
               "type": "archive",
-              "url": "https://github.com/FreeSpacenav/libspnav/archive/v1.1/libspnav-1.1.tar.gz",
-              "sha256": "04b297f68a10db4fa40edf68d7f823ba7b9d0442f2b665181889abe2cea42759"
+              "url": "https://github.com/FreeSpacenav/libspnav/archive/v1.2/libspnav-1.2.tar.gz",
+              "sha256": "e675a2476bd407b8d97a33f93c6651ad3ecdfd422916f260bd620f2aec7ca45f"
             }
           ]
         },
