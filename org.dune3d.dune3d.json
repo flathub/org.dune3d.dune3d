@@ -126,6 +126,10 @@
                     "type": "archive",
                     "url": "https://github.com/dune3d/dune3d/archive/refs/tags/v1.3.0.tar.gz",
                     "sha256": "a9c346005d260e7d9c4da2593d7683536536531fd6cad806bcfe2cf1c1c912e9"
+                },
+                {
+                    "type":"patch",
+                    "paths":["0001-welcome-window-fix-text-layout.patch"]
                 }
             ]
         }
