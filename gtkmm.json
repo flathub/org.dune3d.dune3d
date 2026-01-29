@@ -3,8 +3,8 @@
     "sources": [
         {
             "type": "archive",
-            "url": "https://download.gnome.org/sources/gtkmm/4.20/gtkmm-4.20.0.tar.xz",
-            "sha256": "daad9bf9b70f90975f91781fc7a656c923a91374261f576c883cd3aebd59c833",
+            "url": "https://download.gnome.org/sources/gtkmm/4.21/gtkmm-4.21.2.tar.xz",
+            "sha256": "60bc8fce99c5ee28cb3ce4eabf4e8bb8b8f708c88d44dd7727519680ec92db80",
             "x-checker-data": {
                 "type": "gnome",
                 "name": "gtkmm"
