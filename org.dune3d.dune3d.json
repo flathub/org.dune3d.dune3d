@@ -1,7 +1,7 @@
 {
     "app-id": "org.dune3d.dune3d",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "49",
+    "runtime-version": "50",
     "sdk": "org.gnome.Sdk",
     "command": "dune3d",
     "finish-args": [
@@ -15,56 +15,35 @@
         "--env=SPNAV_SOCKET=/run/spnav.sock"
     ],
     "cleanup": [
-        "*.a",
-        "*.la",
         "/include",
-        "/lib/*/*.h",
-        "/share/oce-0.18",
-        "/share/pkgconfig",
-        "/lib/atkmm-1.6",
-        "/lib/cairomm-1.0",
-        "/lib/gdkmm-3.0",
-        "/lib/giomm-2.4",
-        "/lib/glibmm-2.78",
-        "/lib/gtkmm-4.10",
-        "/lib/oce-0.18",
-        "/lib/pangomm-1.4",
-        "/lib/pkgconfig",
         "/lib/cmake",
-        "/lib/sigc++-3.0",
-        "/lib/sigc++-2.0"
+        "/lib/pkgconfig",
+        "/share/doc",
+        "/share/glm",
+        "/share/pkgconfig",
+        "*.la",
+        "*.a"
     ],
     "modules": [
         "gtkmm.json",
         {
             "name": "glm",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DGLM_TEST_ENABLE=OFF",
+                "-DCMAKE_INSTALL_LIBDIR=lib"
+            ],
             "sources": [
-                 {
+                {
                     "type": "archive",
                     "url": "https://github.com/g-truc/glm/archive/refs/tags/1.0.2.zip",
                     "sha256": "be64032585415ca7dbea0d614915bb8eec012adf7b4d4fea7ff6b5bd3e0b906a"
                 }
-
-            ],
-            "buildsystem": "cmake-ninja",
-            "cleanup": [ "/share" ],
-            "config-opts": [
-                "-DGLM_TEST_ENABLE=OFF",
-                "-DCMAKE_INSTALL_LIBDIR=lib"
             ]
         },
         {
             "name": "opencascade",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=refs/tags/V7_9_2;sf=tgz",
-                    "dest-filename": "opencascade.tgz",
-                    "sha256": "b012222ddeb7c847325c1346eab8ec8c088834636e6063c2a3cb30641240d73c"
-                }
-            ],
             "buildsystem": "cmake-ninja",
-            "cleanup": [ "/share", "/bin" ],
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE=Release",
                 "-DBUILD_RELEASE_DISABLE_EXCEPTIONS=OFF",
@@ -83,40 +62,51 @@
                 "-DINSTALL_FREETYPE=OFF",
                 "-DINSTALL_SAMPLES=OFF",
                 "-DINSTALL_TEST_CASES=OFF"
+            ],
+            "cleanup": [
+                "/bin"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/Open-Cascade-SAS/OCCT/archive/refs/tags/V7_9_2.tar.gz",
+                    "sha256": "3cd080d3fc33ba0c6c157e110afe3e015859524c4694dbb09812ec9d61595639"
+                }
             ]
         },
         {
             "name": "eigen",
             "buildsystem": "cmake-ninja",
             "builddir": true,
+            "cleanup": [
+                "*"
+            ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gitlab.com/libeigen/eigen/-/archive/3.4.1/eigen-3.4.1.tar.gz",
-                    "sha256": "b93c667d1b69265cdb4d9f30ec21f8facbbe8b307cf34c0b9942834c6d4fdbe2",
+                    "url": "https://gitlab.com/libeigen/eigen/-/archive/5.0.1/eigen-5.0.1.tar.bz2",
+                    "sha256": "e4de6b08f33fd8b8985d2f204381408c660bffa6170ac65b68ae1bd3cd575c0a",
                     "x-checker-data": {
-                        "type": "html",
-                        "url": "https://eigen.tuxfamily.org/index.php?title=Main_Page",
-                        "version-pattern": "latest stable release</b> is Eigen ([\\d\\.-]+[\\d])",
+                        "type": "anitya",
+                        "project-id": 666,
                         "stable-only": true,
-                        "url-template": "https://gitlab.com/libeigen/eigen/-/archive/$version/eigen-$version.tar.gz"
+                        "url-template": "https://gitlab.com/libeigen/eigen/-/archive/$version/eigen-$version.tar.bz2"
                     }
                 }
-            ],
-            "cleanup": [
-                "*"
             ]
         },
         {
             "name": "libspnav",
-            "config-opts": ["--disable-debug"],
+            "config-opts": [
+                "--disable-debug"
+            ],
             "sources": [
-            {
-              "type": "archive",
-              "url": "https://github.com/FreeSpacenav/libspnav/archive/v1.2/libspnav-1.2.tar.gz",
-              "sha256": "e675a2476bd407b8d97a33f93c6651ad3ecdfd422916f260bd620f2aec7ca45f"
-            }
-          ]
+                {
+                    "type": "archive",
+                    "url": "https://github.com/FreeSpacenav/libspnav/archive/v1.2/libspnav-1.2.tar.gz",
+                    "sha256": "e675a2476bd407b8d97a33f93c6651ad3ecdfd422916f260bd620f2aec7ca45f"
+                }
+            ]
         },
         {
             "name": "dune3d",
@@ -129,6 +119,5 @@
                 }
             ]
         }
-
     ]
 }
